@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: #0f0f0f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  perspective: 1000px;
+}
+
+.menu {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.hackerrank-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/65/HackerRank_logo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+
+.menu .toggle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #333;
+  z-index: 10;
+  transition: transform 0.5s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.menu.active .toggle {
+  transform: rotate(360deg) scale(1.2);
+}
+
+.menu li {
+  list-style: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  transform: rotate(calc(-45deg * var(--i))) translate(120px) translateZ(0);
+  transform-origin: 30px 30px;
+  transition: 0.5s ease-in-out;
+  transition-delay: calc(0.05s * var(--i));
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu.active li {
+  transform: rotate(calc(-45deg * var(--i))) translate(120px) translateZ(60px);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+
+
+.menu li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: var(--clr);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 20px;
+  box-shadow: 0 4px 15px var(--clr);
+  transform: scale(0.95);
+  transition: 0.3s ease;
+}
+
+.menu li a:hover {
+  transform: scale(1.15) rotate(10deg);
+  box-shadow: 0 0 20px var(--clr), 0 0 40px var(--clr);
+}
