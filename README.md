@@ -46,3 +46,7 @@ Interactive UI/UX projects
 
 📜 License
 This project is open-source and free to use under the MIT License
+
+
+<img width="1896" height="882" alt="image" src="https://github.com/user-attachments/assets/e44d9f7f-f581-4607-94f6-4e04766afd32" />
+
